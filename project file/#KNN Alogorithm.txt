@@ -1,0 +1,14 @@
+#KNN Alogorithm
+
+knn=KNeighborsClassifier(n_neighbors=7)
+knn.fit(x_train,y_train)
+test_preds=knn.predict(x_test)
+print(test_preds)
+cmap=sns.cubehelix_palette(as_cmap=True)
+f,ax=plt.subplots()
+plt.show()
+cm6=confusion_matrix(y_test,test_preds)
+print("confusion_matrix6 of KNN: ",cm6)
+print("accuracy6 of KNN:",accuracy_score(y_test,test_preds)*100)
+print("report:6 of KNN",classification_report(y_test,test_preds))
+sns.heatmap(cm6,annot=True)

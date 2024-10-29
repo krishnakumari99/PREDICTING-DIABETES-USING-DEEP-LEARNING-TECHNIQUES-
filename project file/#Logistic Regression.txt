@@ -1,0 +1,13 @@
+#Logistic Regression
+
+st_x=StandardScaler()
+x_train=st_x.fit_transform(x_train)
+x_test=st_x.transform(x_test)
+classifier=LogisticRegression(random_state=0)
+classifier.fit(x_train,y_train)
+y_pred6=classifier.predict(x_test)
+cm7=confusion_matrix(y_test,y_pred6)
+print("confusion_matrix7 of Logistic regression:",cm7)
+print("accuracy7 of Logistic regression:",accuracy_score(y_test,y_pred6)*100)
+print("report:7 of Logistic regression",classification_report(y_test,y_pred6))
+sns.heatmap(cm7,annot=True)

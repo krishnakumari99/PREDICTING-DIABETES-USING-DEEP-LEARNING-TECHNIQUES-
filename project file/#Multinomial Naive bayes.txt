@@ -1,0 +1,11 @@
+#Multinomial Naive bayes
+
+mnb=MultinomialNB()
+mnb.fit(x_train,y_train)
+y_pred2=bnb.predict(x_test)
+print("Multinomial navie bayes accuracy:",metrics.accuracy_score(y_test,y_pred2)*100)
+cm2=confusion_matrix(y_test,y_pred2)
+print("confusion_matrix2:",cm2)
+print("accuracy2:",accuracy_score(y_test,y_pred2)*100)
+print("report:2",classification_report(y_test,y_pred2))
+sns.heatmap(cm2,annot=True)

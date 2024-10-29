@@ -1,0 +1,13 @@
+#SVM Algorithm
+
+st_x=StandardScaler()
+x_train=st_x.fit_transform(x_train)
+x_test=st_x.transform(x_test)
+classifier=SVC(kernel='linear',random_state=0)
+classifier.fit(x_train,y_train)
+y_pred7=classifier.predict(x_test)
+cm8=confusion_matrix(y_test,y_pred7)
+print("confusion_matrix8 of SVM:",cm8)
+print("accuracy8 of SVM:",accuracy_score(y_test,y_pred7)*100)
+print("report:8 of SVM",classification_report(y_test,y_pred7))
+sns.heatmap(cm8,annot=True)
